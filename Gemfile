@@ -73,3 +73,9 @@ gem 'devise'
 #画像投稿機能
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+
+#フォントアイコンの補助
+gem 'font-awesome-sass', '5.3.1'
+
+#デバック用gem
+gem 'pry-byebug'

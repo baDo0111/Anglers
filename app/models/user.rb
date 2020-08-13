@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   has_many :fishs, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :fish_comments, dependent: :destroy
 
   attachment :user_image
   attachment :fish_image

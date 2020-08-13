@@ -1,0 +1,48 @@
+<h1 class="text-center">
+	<span class="under">釣果詳細画面</span>
+</h1>
+
+<div class="row">
+	<div class="col-xs-6">
+		<%= attachment_image_tag @fish, :fish_image, fallback: "image5.JPG", size: '400x400'%>
+		<!-- ここにフォロー機能 -->
+	</div>
+	<div class="col-xs-6">
+		<%= attachment_image_tag @user, :user_image, size: '100x100', fallback: "image5.JPG", class:'img-circle' %>
+		<%= @fish.user.name %>
+	</div>
+	<% if user_signed_in? && @fish.user == current_user %>
+		<div class="col-xs-6">
+			<%= link_to "編集する", edit_fish_path, class: "btn btn-success" %>
+			<%= link_to "削除する", fish_path(@fish.id), method: :delete, data:{confirm:"本当に消しますか？"}, class: "btn btn-danger" %>
+		</div>
+	<% end %>
+	<div class="col-xs-6">
+		<h3>釣果タイトル</h3>
+		<h4><%= @fish.fishing_title %></h4>
+		<h3>釣果日時</h3>
+		<h4><%= @fish.fishing_date %></h4>
+		<h3>釣果内容</h3>
+		<h4><%= @fish.fish_name %></h4>
+		<h3>魚種</h3>
+		<h4><%= @fish.fishing_contents %></h4>
+		<h3>サイズ</h3>
+		<h4><%= @fish.fish_size %></h4>
+		<h3>重量</h3>
+		<h4><%= @fish.fish_weight %></h4>
+		<h3>都道府県</h3>
+		<h4><%= @fish.prefectures %></h4>
+	</div>
+</div>
+<div class="text-center">
+	<button id="button1" class="btn btn-primary">コメントする</button>
+		<div class="comment-form" id="acMenu" >
+		      <%= form_with model:[@fish, @fish_comment], data: {remote: true} do |f| %>
+		        <%= f.text_area :comment, size: "90x5" %>
+		        <%= f.submit '送信', class: "btn btn-success" %>
+		      <% end %>
+    		<table class="comment_<%= @fish.id %>">
+      			<%= render 'comment', fish_comments: @fish.fish_comments %>
+    		</table>
+		</div>
+</div>

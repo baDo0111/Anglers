@@ -40,3 +40,15 @@ $(document).ready(function () {
     hidePrevious : false
   });
 });
+
+// コメント表示/非表示機能
+//↓(jQuery)初回読み込み時、リロードどちらでも発火させる
+jQuery(document).on('turbolinks:load', function(){
+  $(function(){
+        $('#acMenu').toggle();
+            $("#button1").click(function(){
+                $("#acMenu").toggle();
+        });
+    });
+});
+// ここまで

@@ -15,11 +15,27 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
+/*footer機能*/
 nav {
 	height: 100px;
 }
+/*ここまで*/
 
+/*bodyデザイン*/
+body {
+  background-color: #FAE5F6;
+     .link {color:#000022; text-decoration:none;
+     visited { color:#000022; text-decoration:none }
+     hover { color:#000022; text-decoration:none }
+     active { color:#000022; text-decoration:none }
+     }
+}
+/*ここまで*/
+
+/*ホームデザイン(skipper)*/
 .image1 {
   background-image: url(image1.JPG);
 }
@@ -39,3 +55,29 @@ nav {
 #container{
   height: 600px;
 }
+
+fish-image {
+  width: 50px;
+  height: 50px;
+}
+/*ここまで*/
+
+/*見出しデザイン*/
+.under {
+  background: linear-gradient(transparent 50%, #a8eaff 50%);
+}
+/*ここまで*/
+
+#acMenu button {
+cursor:pointer;
+}
+#acMenu comment-form {
+background:#f2f2f2;
+width:200px;
+height:50px;
+line-height:50px;
+text-align:center;
+border:#666 1px solid;
+display:none;
+}
+

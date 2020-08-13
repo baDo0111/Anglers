@@ -1,0 +1,32 @@
+<h1 class="text-center">
+	<span class="under">釣果一覧画面</span>
+</h1>
+<div class="">
+	
+</div>
+<% @fishs.each do |fish| %>
+	<div class="row col-xs-3">
+		<%= link_to fish_path(fish.id), class: "link" do %>
+			<div class="fish-image">
+				<%= attachment_image_tag @fish, :fish_image, fallback: "image5.JPG", size: '250x200', class:'img-responsive' %>
+			</div>
+			<div class="fishing_title">
+				<i class="fas fa-fish fa-2x"></i>
+				<%= fish.fishing_title %>
+			</div>
+		<% end %>
+			<div class="fish_comment">
+				<i class="fas fa-comment fa-2x"></i>
+				<i class="fa fa-heart fa-2x" style="color: red;"></i>
+			</div>
+		<%= link_to user_path(fish.user_id), class: "link" do %>
+			<div class="user_image">
+				<%= attachment_image_tag @users, :user_image, size: '35x35', fallback: "image5.JPG", class:'img-circle' %>
+				<%= fish.user.name %>
+			</div>
+		<% end %>
+		<div class="fishing_contents">
+				<%= fish.fishing_contents %>
+		</div>
+	</div>
+<% end %>
