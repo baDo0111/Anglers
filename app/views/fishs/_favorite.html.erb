@@ -1,0 +1,9 @@
+<% if fish.favorited_by?(current_user) %>
+	<%=link_to fish_favorites_path(fish.id), method: :delete, remote: true do %>
+		<i class="fa fa-heart fa-2x" style="color: red;"></i>
+	<% end %>
+<% else %>
+	<%=link_to fish_favorites_path(fish.id), method: :post, remote: true do %>
+		<i class="fa fa-heart fa-2x" style="color: white;"></i>
+	<% end %>
+<% end %>

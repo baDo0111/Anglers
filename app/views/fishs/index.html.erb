@@ -1,9 +1,7 @@
 <h1 class="text-center">
 	<span class="under">釣果一覧画面</span>
 </h1>
-<div class="">
-	
-</div>
+
 <% @fishs.each do |fish| %>
 	<div class="row col-xs-3">
 		<%= link_to fish_path(fish.id), class: "link" do %>
@@ -15,9 +13,13 @@
 				<%= fish.fishing_title %>
 			</div>
 		<% end %>
-			<div class="fish_comment">
-				<i class="fas fa-comment fa-2x"></i>
-				<i class="fa fa-heart fa-2x" style="color: red;"></i>
+			<div class="fish-reaction">
+				<i class="fas fa-comment fa-2x">
+					 <%= fish.fish_comments.count %>
+				</i>
+				<div id="favorite_buttons_<%= fish.id %>">
+					<%= render partial: 'fishs/favorite', locals: {fish: fish} %>
+				</div>
 			</div>
 		<%= link_to user_path(fish.user_id), class: "link" do %>
 			<div class="user_image">

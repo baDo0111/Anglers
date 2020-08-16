@@ -13,37 +13,37 @@ User.create!(
 	)
 
 User.create!(
-	email: 'test2@test2.com',
+	email: 'fish2@fish2.com',
 	password: 'password2',
 	name: '魚太郎2'
 	)
 
 User.create!(
-	email: 'test3@test3.com',
+	email: 'fish3@fish3.com',
 	password: 'password3',
 	name: '魚太郎3'
 	)
 
 User.create!(
-	email: 'test4@test4.com',
+	email: 'fish4@fish4.com',
 	password: 'password4',
 	name: '魚太郎4'
 	)
 
 User.create!(
-	email: 'test5@test5.com',
+	email: 'fish5@fish5.com',
 	password: 'password5',
 	name: '魚太郎5'
 	)
 
 Fish.create!(
-	fishing_title: 'test1',
-	fish_name: 'sakana1',
-	fishing_contents: 'sakana_content1',
-	fishing_date: '20200111',
-	fish_size: '11',
-	fish_weight: '10',
-	prefectures: '1',
+	fishing_title: 'test6',
+	fish_name: 'sakana6',
+	fishing_contents: 'sakana_content6',
+	fishing_date: '20200116',
+	fish_size: '60',
+	fish_weight: '66',
+	prefectures: '13',
 	user_id: '1'
 	)
 

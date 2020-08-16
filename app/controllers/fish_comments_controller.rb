@@ -19,7 +19,6 @@ class FishCommentsController < ApplicationController
       redirect_to request.referer
     end
     @fish_comment.destroy
-    
   end
 
   private

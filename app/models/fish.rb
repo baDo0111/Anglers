@@ -1,6 +1,7 @@
 class Fish < ApplicationRecord
 	belongs_to :user
-	has_many :fish_comments
+    has_many :favorites, dependent: :destroy
+	has_many :fish_comments, dependent: :destroy
 
 	attachment :fish_image
 
@@ -16,4 +17,8 @@ class Fish < ApplicationRecord
      福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46, 
      沖縄県:47
    }
+
+   def favorited_by?(user)
+     favorites.where(user_id: user.id).exists?
+   end
 end

@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   resources :fishs do
   	resource :fish_comments, only: [:create, :destroy]
-  	resource :favotites, only: [:create, :destroy]
+  	resource :favorites, only: [:create, :destroy]
   end
 end

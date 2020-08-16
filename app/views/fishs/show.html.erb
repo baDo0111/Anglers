@@ -34,15 +34,17 @@
 		<h4><%= @fish.prefectures %></h4>
 	</div>
 </div>
-<div class="text-center">
-	<button id="button1" class="btn btn-primary">コメントする</button>
-		<div class="comment-form" id="acMenu" >
-		      <%= form_with model:[@fish, @fish_comment], data: {remote: true} do |f| %>
-		        <%= f.text_area :comment, size: "90x5" %>
-		        <%= f.submit '送信', class: "btn btn-success" %>
-		      <% end %>
-    		<table class="comment_<%= @fish.id %>">
-      			<%= render 'comment', fish_comments: @fish.fish_comments %>
-    		</table>
-		</div>
-</div>
+<% if user_signed_in? %>
+	<div class="text-center">
+		<button id="button1" class="btn btn-primary">コメントする</button>
+			<div class="comment-form" id="acMenu" >
+			      <%= form_with model:[@fish, @fish_comment], data: {remote: true} do |f| %>
+			        <%= f.text_area :comment, size: "90x5" %>
+			        <%= f.submit '送信', class: "btn btn-success" %>
+			      <% end %>
+	    		<table class="comment_<%= @fish.id %>">
+	      			<%= render 'comment', fish_comments: @fish.fish_comments %>
+	    		</table>
+			</div>
+	</div>
+<% end %>
