@@ -18,6 +18,17 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+/*Topに戻るボタン*/
+#back {
+  position: fixed;
+  right: 300px;
+  bottom: 20px;
+}
+#back img {
+  width: 50px;
+}
+/*ここまで*/
+
 /*footer機能*/
 nav {
 	height: 100px;
@@ -80,4 +91,3 @@ text-align:center;
 border:#666 1px solid;
 display:none;
 }
-

@@ -6,7 +6,7 @@
 	<div class="row col-xs-3">
 		<%= link_to fish_path(fish.id), class: "link" do %>
 			<div class="fish-image">
-				<%= attachment_image_tag @fish, :fish_image, fallback: "image5.JPG", size: '250x200', class:'img-responsive' %>
+				<%= attachment_image_tag fish, :fish_image, fallback: "image5.JPG", size: '250x200', class:'img-responsive' %>
 			</div>
 			<div class="fishing_title">
 				<i class="fas fa-fish fa-2x"></i>

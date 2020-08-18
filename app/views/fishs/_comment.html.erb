@@ -1,4 +1,4 @@
-<% fish_comments.each do |fish_comment| %> <!-- コメント一覧 -->
+<% fish_comments.reverse_each do |fish_comment| %> <!-- コメント一覧 -->
   <tr>
     <td>
       <%= link_to user_path(fish_comment.user), class: "user_#{fish_comment.user.id}" do %>

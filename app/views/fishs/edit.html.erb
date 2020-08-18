@@ -1,2 +1,66 @@
-<h1>Fish#edit</h1>
-<p>Find me in app/views/fish/edit.html.erb</p>
+<h1 class="text-center">
+	<span class="under">釣果編集画面</span>
+</h1>
+
+<%= form_with(model:@fish, local: true) do |f| %>
+
+	<%= attachment_image_tag(@fish, :fish_image, size: "300x300", fallback: "no_image.jpg", id:"img1")%>
+	<br>
+	<%= f.attachment_field :fish_image, id:"myfile"%>
+	<script>
+		$(function(){
+		  $('#myfile').change(function(e){
+		    //ファイルオブジェクトを取得する
+		    var file = e.target.files[0];
+		    var reader = new FileReader();
+
+		    //画像でない場合は処理終了
+		    if(file.type.indexOf("image") < 0){
+		      alert("画像ファイルを指定してください。");
+		      return false;
+		    }
+
+		    //アップロードした画像を設定する
+		    reader.onload = (function(file){
+		      return function(e){
+		        $("#img1").attr("src", e.target.result);
+		        $("#img1").attr("title", file.name);
+		      };
+		    })(file);
+		    reader.readAsDataURL(file);
+
+		  });
+		});
+	</script>
+
+	<div class="form-group">
+		<%= f.label :釣果タイトル %>
+		<%= f.text_field :fishing_title %>
+	</div>
+	<div class="form-group">
+		<%= f.label :釣果日時 %>
+		<%= f.date_field :fishing_date %>
+	</div>
+	<div class="form-group">
+		<%= f.label :魚種 %>
+		<%= f.text_field :fish_name %>
+	</div>
+	<div class="form-group">
+		<%= f.label :釣果内容 %>
+		<%= f.text_field :fishing_contents %>
+	</div>
+	<div class="form-group">
+		<%= f.label :サイズ %>
+		<%= f.number_field :fish_size, min: 1, max:200, step: '0.1' %>cm
+	</div>
+	<div class="form-group">
+		<%= f.label :重量 %>
+		<%= f.number_field :fish_weight, step: '0.1' %>kg
+	</div>
+	<div class="form-group">
+		<%= f.label :都道府県 %>
+		<%= f.select :prefectures, Fish.prefectures.keys %>
+	</div>
+
+	<%= f.submit "更新する", class: "btn btn-primary" %>
+<% end %>

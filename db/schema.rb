@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_081900) do
+ActiveRecord::Schema.define(version: 2020_08_18_165752) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2020_08_13_081900) do
     t.string "fish_name", null: false
     t.text "fishing_contents", null: false
     t.date "fishing_date", null: false
-    t.integer "fish_size", null: false
-    t.integer "fish_weight", null: false
+    t.float "fish_size", null: false
+    t.float "fish_weight", null: false
     t.integer "prefectures", default: 0, null: false
     t.string "fish_image_id"
     t.integer "user_id", null: false
