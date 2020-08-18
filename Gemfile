@@ -79,3 +79,9 @@ gem 'font-awesome-sass', '5.3.1'
 
 #デバック用gem
 gem 'pry-byebug'
+
+# Mysql gem
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
