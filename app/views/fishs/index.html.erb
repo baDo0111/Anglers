@@ -15,7 +15,7 @@
 		<% end %>
 			<div class="fish-reaction">
 				<i class="fas fa-comment fa-2x">
-					 <%= fish.fish_comments.count %>
+					 <%= fish.fish_comments.count %>回
 				</i>
 				<div id="favorite_buttons_<%= fish.id %>">
 					<%= render partial: 'fishs/favorite', locals: {fish: fish} %>
