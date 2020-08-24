@@ -13,6 +13,11 @@
 
   <div class="container">
     <body>
+      <div class="notice">
+        <p><%= flash[:notice] %></p>
+        <p><%= flash[:alert] %></p>
+      </div>
+
       <%= yield %>
 
       <span id="back">

@@ -8,12 +8,13 @@
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
             <li><%= link_to "ホーム", root_path %></li>
+            <li><%= link_to "ユーザー情報編集", edit_user_path(current_user.id) %></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "ホーム", root_path %></li>
             <li><%= link_to "新規会員登録", new_user_registration_path %></li>
             <li><%= link_to "ログイン", new_user_session_path %></li>
-            <li><%= link_to "ゲストログイン" %></li>
+            <li><%= link_to "ゲストログイン（閲覧用）", homes_guest_sign_in_path, method: :post %></li>
           <% end %>
         </ul>
       </nav>

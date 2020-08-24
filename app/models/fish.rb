@@ -1,9 +1,8 @@
 class Fish < ApplicationRecord
 	belongs_to :user
-    has_many :favorites, dependent: :destroy
-	has_many :fish_comments, dependent: :destroy
 
-	attachment :fish_image
+  has_many :favorites, dependent: :destroy
+	has_many :fish_comments, dependent: :destroy
 
 	enum prefectures:{
      "---":0,
@@ -18,7 +17,17 @@ class Fish < ApplicationRecord
      沖縄県:47
    }
 
+   attachment :fish_image
+
    def favorited_by?(user)
      favorites.where(user_id: user.id).exists?
    end
+
+   validates :fishing_title, presence: true
+   validates :fish_name, presence: true
+   validates :fishing_contents, presence: true
+   validates :fishing_date, presence: true
+   validates :fish_size, presence: true
+   validates :fish_weight, presence: true
+   validates :prefectures, presence: true
 end

@@ -1,6 +1,48 @@
-<h1 class="text-center">
-	<span class="under">釣果一覧画面</span>
-</h1>
+<div class="text-center">
+	<h1><span class="under">釣果一覧画面</span></h1>
+
+	<button id="button1" class="btn btn-primary">釣果を投稿する</button>
+		<div class="comment-form" id="acMenu" >
+			<div class="comment-form" id="acMenu" >
+				<%= form_with model:@fish, url: {controller: 'fishs', action: 'create' } do |f| %>
+
+					<%= attachment_image_tag @fish, :fish_image, size: "300x300", fallback: "no_image.jpg", id:"img1" %>
+					<%= f.attachment_field :fish_image, id:"myfile" %>
+
+					<div class="form-group">
+						<%= f.label :釣果タイトル %>
+						<%= f.text_field :fishing_title %>
+					</div>
+					<div class="form-group">
+						<%= f.label :釣果日時 %>
+						<%= f.date_field :fishing_date %>
+					</div>
+					<div class="form-group">
+						<%= f.label :魚種 %>
+						<%= f.text_field :fish_name %>
+					</div>
+					<div class="form-group">
+						<%= f.label :釣果内容 %>
+						<%= f.text_field :fishing_contents %>
+					</div>
+					<div class="form-group">
+						<%= f.label :サイズ %>
+						<%= f.number_field :fish_size, min: 1, max:200, step: '0.1' %>cm
+					</div>
+					<div class="form-group">
+						<%= f.label :重量 %>
+						<%= f.number_field :fish_weight, step: '0.1' %>kg
+					</div>
+					<div class="form-group">
+						<%= f.label :都道府県 %>
+						<%= f.select :prefectures, Fish.prefectures.keys %>
+					</div>
+
+					<%= f.submit "投稿する", class: "btn btn-primary" %>
+				<% end %>
+			</div>
+		</div>
+</div>
 
 <% @fishs.each do |fish| %>
 	<div class="row col-xs-3">
@@ -15,7 +57,7 @@
 		<% end %>
 			<div class="fish-reaction">
 				<i class="fas fa-comment fa-2x">
-					 <%= fish.fish_comments.count %>回
+					 <%= fish.fish_comments.count %>
 				</i>
 				<div id="favorite_buttons_<%= fish.id %>">
 					<%= render partial: 'fishs/favorite', locals: {fish: fish} %>
@@ -23,7 +65,7 @@
 			</div>
 		<%= link_to user_path(fish.user_id), class: "link" do %>
 			<div class="user_image">
-				<%= attachment_image_tag @users, :user_image, size: '35x35', fallback: "image5.JPG", class:'img-circle' %>
+				<%= attachment_image_tag fish.user, :user_image, size: '35x35', fallback: "image5.JPG", class:'img-circle' %>
 				<%= fish.user.name %>
 			</div>
 		<% end %>

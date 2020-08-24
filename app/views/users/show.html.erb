@@ -1,2 +1,9 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1 class="text-center">
+	<span class="under">ユーザー情報詳細画面</span>
+</h1>
+
+<%= attachment_image_tag @user, :user_image, size: '100x100', fallback: "image5.JPG", class:'img-circle' %>
+<%= @user.name %>
+<%= @user.introduction %>
+
+<%= link_to "戻る", fishs_path, class: "btn btn-success" %>

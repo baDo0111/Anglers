@@ -4,9 +4,9 @@
 
 <%= form_with(model:@fish, local: true) do |f| %>
 
-	<%= attachment_image_tag(@fish, :fish_image, size: "300x300", fallback: "no_image.jpg", id:"img1")%>
+	<%= attachment_image_tag(@fish, :fish_image, size: "300x300", fallback: "no_image.jpg", id:"img1") %>
 	<br>
-	<%= f.attachment_field :fish_image, id:"myfile"%>
+	<%= f.attachment_field :fish_image, id:"myfile" %>
 	<script>
 		$(function(){
 		  $('#myfile').change(function(e){

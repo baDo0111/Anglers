@@ -1,6 +1,11 @@
 class FishsController < ApplicationController
+
+  def new
+  end
+
   def index
   	@fishs = Fish.all
+    @fish = Fish.new
   end
 
   def show
@@ -19,7 +24,11 @@ class FishsController < ApplicationController
     redirect_to @fish
   end
 
-  def new
+  def create
+    @fish = Fish.new(fish_params)
+    @fish.user_id = current_user.id
+    @fish.save
+    redirect_to fishs_path
   end
 
   def destroy
@@ -32,8 +41,7 @@ class FishsController < ApplicationController
 
   def fish_params
     params.require(:fish).permit(:fishing_title, :fish_name, :fishing_contents,
-      :fishing_date, :fish_size, :fish_weight, :prefectures,
-      :fish_image)
+      :fishing_date, :fish_size, :fish_weight, :prefectures, :fish_image)
   end
 
 end

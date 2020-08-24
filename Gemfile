@@ -89,3 +89,7 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+
+# device 日本語化
+gem 'devise-i18n'
+gem 'devise-i18n-views'
