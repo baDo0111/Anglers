@@ -1,18 +1,61 @@
-<div id="container">
-	<div id="theTarget">
-	    <div class="image1"></div>
-	    <div class="image2"></div>
-	    <div class="image3"></div>
-	    <div class="image4"></div>
-	    <div class="image5"></div>
+<div class="box-design">
+	<div class="pin">
+		<div class="pin-img"><%= image_tag 'pin.png', size: "40x40" %></div>
+	</div>
+	<div id="container">
+		<div id="theTarget">
+		    <div class="image1">
+		    	<div class="image1__letter">
+		    		Welcome to Anglers
+		    	</div>
+		    	<p class="image1__letter-p">
+		    		〜当サイトは釣った魚の画像を投稿・閲覧できるサイトです。〜
+		    	</p>
+		    </div>
+		    <div class="image2">
+		    	<div class="image1__letter">
+		    		No Fishing No Life.
+		    	</div>
+		    	<p class="image1__letter-p">
+		    		〜釣りのない人生なんて、考えられない。〜
+		    	</p>
+		    </div>
+		    <div class="image3">
+		    	<div class="image1__letter">
+		    		Life Is Mine.
+		    	</div>
+		    	<p class="image1__letter-p">
+		    		〜人生は俺のものだ。〜
+		    	</p>
+			</div>
+		    <div class="image4">
+		    	<div class="image1__letter">
+		    		I go fishing not to find myself but to lose myself...
+		    	</div>
+		    	<p class="image1__letter-p">
+		    		〜僕は自分を見つけるために釣りに行くのではなく、自分を失うために行くのだ。〜
+		    	</p>
+		    </div>
+		    <div class="image5">
+		    	<div class="image1__letter">
+		    		When nothing is going right, Just go fishing!
+		    	</div>
+		    	<p class="image1__letter-p">
+		    		〜「何もかもうまくいかない時は、釣りに行けば良い！」〜
+		    	</p>
+			</div>
+		</div>
 	</div>
 </div>
 
-<div class="row col-xs-6 text-center">
+<div class="under"><h1>釣果一覧画面</h1></div>
+<div class="card">
+	<div class="clip">
+		<div class="clip-img"><%= image_tag 'paper-clip', size: "50x60" %></div>
+	</div>
 	<%= link_to fishs_path do %>
-		<h3 class= "link"><span class="under">釣果一覧画面</span></h3>
-		<div class="fish-image">
-			<%= image_tag '3598075_3.jpg',size: '500x300', class:'img-responsive' %>
+		<div class="card__image">
+			<%= image_tag '3598075_3.jpg',size: '500x300' %>
 		</div>
 	<% end %>
 </div>

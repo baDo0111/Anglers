@@ -18,64 +18,269 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-/*Topに戻るボタン*/
+* {
+   box-sizing: border-box;
+}
+
+/*Topに戻るボタン ここから*/
 #back {
   position: fixed;
   right: 300px;
   bottom: 20px;
-}
-#back img {
-  width: 50px;
+  z-index: 100;
+    img {
+    width: 50px;
+  }
 }
 /*ここまで*/
 
-/*footer機能*/
-nav {
-	height: 100px;
+/*ヘッダーデザイン　ここから*/
+
+ @mixin header-footer {
+  width: 100%;
+  padding: 0;
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  font-size: 16px;
+ }
+
+header {
+  height: 110px;
+  @include header-footer;
 }
+
+.main-nav {
+
+  &__logo {
+    display: inline-block;
+      padding: {
+        top: 20px;
+        bottom: 10px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: inline-block;
+
+  }
+
+  &__item {
+    display: inline-block;
+    padding: {
+        right: 15px;
+        left: 15px;
+    }
+  }
+
+  &__link {
+    color: white;
+  }
+}
+
 /*ここまで*/
 
 /*bodyデザイン*/
 body {
-  background-color: #FAE5F6;
-     .link {color:#000022; text-decoration:none;
-     visited { color:#000022; text-decoration:none }
-     hover { color:#000022; text-decoration:none }
-     active { color:#000022; text-decoration:none }
-     }
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: radial-gradient(rgb(169, 214, 255), rgb(0, 80, 159));
+  background-image: image-url("sea.jpg");
+  background-size: cover;
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
 }
 /*ここまで*/
 
-/*ホームデザイン(skipper)*/
-.image1 {
-  background-image: image-url("image1.JPG");
+/*フッターデザイン*/
+
+.footer {
+  laft: 50%;
+  margin-top: 50px;
+	height: 170px;
+  position: relative;
+
+  @include header-footer;
+    &__copyright {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: {
+        top: 130px;
+      }
+    }
+
+    .insta {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      .insta-icon {
+        z-index: 100;
+      }
+    }
+
+    .twitter {
+      position: absolute;
+      left: 45%;
+      top: 40%;
+      .twitter-icon {
+        z-index: 100;
+      }
+    }
+
+    .facebook {
+      position: absolute;
+      left: 55%;
+      top: 40%;
+      .facebook-icon {
+        z-index: 100;
+      }
+    }
 }
-.image2 {
-  background-image: image-url("image2.JPG");
-}
-.image3 {
-  background-image: image-url("image3.JPG");
-}
-.image4 {
-  background-image: image-url("image4.JPG");
-}
-.image5 {
-  background-image: image-url("image5.JPG");
+
+/*ここまで*/
+
+/*Home-indexデザイン*/
+.box-design {
+ position: relative;
+ width: 90%;
+ margin: 2.5em auto;
+ padding: 35px 30px 20px;
+ color: white;/* 文字色 */
+ background-color: #e8ddbd; /*枠背景色*/
+ box-shadow: inset 0 0 40px rgba(204, 186, 136,1), 2px 10px 10px #333;
+
+    .pin{
+      position: absolute;
+      top: -10px;
+      left: 50%;
+
+      .pin-img{
+        margin-left: -50%;
+        z-index: 100;
+      }
+    }
 }
 
 #container{
-  height: 600px;
+  height: 550px;
+
+  @mixin image {
+        background-color: #7f7f7f;
+        background-blend-mode: soft-light;
+  }
+
+  @mixin letter {
+        color: white;
+        font-weight: bold;
+        font-size: 5rem;
+        line-height: 5rem;
+        position: absolute;
+        bottom: 100px;
+        left: 100px;
+  }
+
+  @mixin letter-p {
+        position: absolute;
+        bottom: 45px;
+        left: 150px;
+        font-size: 20px;
+  }
+
+      .image1 {
+        background-image: image-url("image1.JPG");
+        @include image;
+          &__letter {
+          @include letter;
+          }
+
+          &__letter-p {
+          @include letter-p;
+          }
+  }
+      .image2 {
+        background-image: image-url("image2.JPG");
+        @include image;
+      }
+      .image3 {
+        background-image: image-url("image3.JPG");
+        @include image;
+      }
+      .image4 {
+        background-image: image-url("image4.JPG");
+        @include image;
+      }
+      .image5 {
+        background-image: image-url("image5.JPG");
+        @include image;
+      }
+
+  .skippr-nav-container {
+        display:none;
+  }
 }
 
-fish-image {
-  width: 50px;
-  height: 50px;
+.card {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &:after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 20;
+    left: 50;
+    width: 500px;
+    height: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: rotate(3deg);
+    background: #fff;
+    z-index: -1;
+  }
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 20;
+    left: 50;
+    width: 500px;
+    height: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: rotate(-3deg);
+    background: #fff;
+    z-index: -1;
+  }
+
+  .clip {
+      position: absolute;
+      top: -14px;
+      left: 30%;
+
+      .clip-img{
+        z-index: 100;
+      }
+    }
 }
+
 /*ここまで*/
 
 /*見出しデザイン*/
+h1 {
+  width:12em;
+  margin:0 auto;
+}
 .under {
-  background: linear-gradient(transparent 50%, #a8eaff 50%);
+  background: linear-gradient(transparent 80%, #a8eaff 20%);
+  margin: 0 auto;
+  text-align:center;
+}
+.under:first-letter {
+  font-size: 150%;
+  color: #eb6100;
 }
 /*ここまで*/
 
