@@ -1,40 +1,59 @@
-<h1 class="text-center">
-	<span class="under">釣果編集画面</span>
-</h1>
+<div class="under">
+	<h1>釣果編集画面</h1>
+</div>
 
 <%= form_with(model:@fish, local: true) do |f| %>
 
-	<%= attachment_image_tag @fish, :fish_image, size: "300x300", fallback: "no_image.jpg", id:"img1" %>
-	<%= f.attachment_field :fish_image, id:"myfile" %>
+	<div class="Edit-form">
+		<div class="col-lg-4 col-xs-12">
+			<div class="form__image">
+				<%= attachment_image_tag @fish, :fish_image, size: "300x300", fallback: "no_image.jpg", id:"img1" %>
+				<%= f.attachment_field :fish_image, id:"myfile" %>
+			</div>
+		</div>
 
-	<div class="form-group">
-		<%= f.label :釣果タイトル %>
-		<%= f.text_field :fishing_title %>
-	</div>
-	<div class="form-group">
-		<%= f.label :釣果日時 %>
-		<%= f.date_field :fishing_date %>
-	</div>
-	<div class="form-group">
-		<%= f.label :魚種 %>
-		<%= f.text_field :fish_name %>
-	</div>
-	<div class="form-group">
-		<%= f.label :釣果内容 %>
-		<%= f.text_area :fishing_contents, size: '43x6', wrap: 'hard' %>
-	</div>
-	<div class="form-group">
-		<%= f.label :サイズ %>
-		<%= f.number_field :fish_size, min: 1, max:200, step: '0.1' %>cm
-	</div>
-	<div class="form-group">
-		<%= f.label :重量 %>
-		<%= f.number_field :fish_weight, step: '0.1' %>kg
-	</div>
-	<div class="form-group">
-		<%= f.label :都道府県 %>
-		<%= f.select :prefectures, Fish.prefectures.keys %>
-	</div>
+		<div class="col-lg-4 col-xs-12">
+			<div class="form__title">
+				<div class="headline"><%= f.label :釣果タイトル %></div>
+				<%= f.text_field :fishing_title, class: 'form-control' %>
+			</div>
 
-	<%= f.submit "更新する", class: "btn btn-primary" %>
+			<div class="form__date">
+				<div class="headline"><%= f.label :釣果日時 %></div>
+				<%= f.date_field :fishing_date, class: 'form-control' %>
+			</div>
+
+			<div class="form__name">
+				<div class="headline"><%= f.label :魚種 %></div>
+				<%= f.text_field :fish_name, class: 'form-control' %>
+			</div>
+
+			<div class="form__contents">
+				<div class="headline"><%= f.label :釣果内容 %></div>
+				<%= f.text_area :fishing_contents, size: '40x6', wrap: 'hard',class: "contents-form form-control" %>
+			</div>
+		</div>
+
+		<div class="col-lg-4 col-xs-12">
+			<div class="form__fish-size">
+				<div class="headline"><%= f.label :サイズ %>(cm)</div>
+				<%= f.number_field :fish_size, class: 'form-control', min: 1, max:200, step: '0.1' %>
+			</div>
+
+			<div class="form__fish-weight">
+				<div class="headline"><%= f.label :重量 %>(kg)</div>
+				<%= f.number_field :fish_weight, step: '0.1', class: 'form-control', min: 0, max: 40 %>
+			</div>
+
+			<div class="form__prefectures">
+				<div class="headline"><%= f.label :都道府県 %></div>
+				<%= f.select :prefectures, Fish.prefectures.keys, {} , {class: 'form-control'} %>
+			</div>
+
+			<div class="form__button text-center">
+				<%= f.submit "更新する", class: "btn btn-primary btn-lg" %>
+			</div>
+		</div>
+
+	</div>
 <% end %>

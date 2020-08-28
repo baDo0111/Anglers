@@ -85,7 +85,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: radial-gradient(rgb(169, 214, 255), rgb(0, 80, 159));
   background-image: image-url("sea.jpg");
   background-size: cover;
   background-color:rgba(255,255,255,0.4);
@@ -294,14 +293,21 @@ h1 {
 @mixin form-controll {
   margin: {
       bottom: 30px;
-      left: 40px;
     }
+}
+.Edit-form {
+  margin-top: 50px;
 }
 .form {
   height: 450px;
 
+  .headline {
+    font-size: 18px;
+  }
+
   &__image {
     @include form-controll;
+    margin-left: 50px;
   }
 
   &__title {
@@ -318,6 +324,9 @@ h1 {
 
   &__contents {
     @include form-controll;
+    .contents-form {
+      resize: vertical;
+    }
   }
 
   &__fish-size {
@@ -330,6 +339,7 @@ h1 {
 
   &__prefectures {
     @include form-controll;
+    font-size: 15px;
   }
 
   &__button {
