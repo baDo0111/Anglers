@@ -111,6 +111,15 @@ body {
       }
     }
 
+    .twitter {
+      position: absolute;
+      left: 40%;
+      top: 40%;
+      .twitter-icon {
+        z-index: 100;
+      }
+    }
+
     .insta {
       position: absolute;
       left: 50%;
@@ -120,18 +129,9 @@ body {
       }
     }
 
-    .twitter {
-      position: absolute;
-      left: 45%;
-      top: 40%;
-      .twitter-icon {
-        z-index: 100;
-      }
-    }
-
     .facebook {
       position: absolute;
-      left: 55%;
+      left: 60%;
       top: 40%;
       .facebook-icon {
         z-index: 100;
@@ -257,7 +257,7 @@ body {
 
   .clip {
       position: absolute;
-      top: -14px;
+      top: -12px;
       left: 30%;
 
       .clip-img{
@@ -286,14 +286,174 @@ h1 {
 
 /*アコーディオンメニュー*/
 #acMenu button {
-cursor:pointer;
+  cursor:pointer;
 }
-#acMenu comment-form {
-background:#f2f2f2;
-width:200px;
-height:50px;
-line-height:50px;
-text-align:center;
-border:#666 1px solid;
-display:none;
+/*ここまで*/
+
+/*入力フォームデザイン　ここから*/
+@mixin form-controll {
+  margin: {
+      bottom: 30px;
+      left: 40px;
+    }
 }
+.form {
+  height: 450px;
+
+  &__image {
+    @include form-controll;
+  }
+
+  &__title {
+    @include form-controll;
+  }
+
+  &__date {
+    @include form-controll;
+  }
+
+  &__name {
+    @include form-controll;
+  }
+
+  &__contents {
+    @include form-controll;
+  }
+
+  &__fish-size {
+    @include form-controll;
+  }
+
+  &__fish-weight {
+    @include form-controll;
+  }
+
+  &__prefectures {
+    @include form-controll;
+  }
+
+  &__button {
+    @include form-controll;
+  }
+}
+/*ここまで*/
+
+/*fish-indexデザイン*/
+
+.btn-center {
+  text-align: center;
+      &__square {
+      display: inline-block;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      background: #668ad8;
+      color: #FFF;
+      border-bottom: solid 4px #627295;
+      border-radius: 3px;
+      cursor: pointer;
+      user-select: none;
+      text-align:center;
+      font-size: 20px;
+      margin: {
+          top: 10px;
+          bottom: 50px;
+      }
+
+        &:active {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);
+        border-bottom: none;
+      }
+    }
+
+    .balloon {
+      position: relative;
+      width: 250px;
+      margin: 50px auto 10px;
+      padding: 10px;
+      background: pink;
+      text-align: center;
+      color: red;
+      border-radius: 8px;
+      font-size: 20px;
+      animation: FloatVertical 3.5s ease-in-out infinite alternate;
+      @keyframes FloatVertical {
+          0% { transform:translate3d(0,0px,0); }
+          50% { transform:translate3d(0,-15px,0); }
+          100% { transform:translate3d(0,15px,0); }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -28px;
+        left: 50%;
+        margin-left: -14px;
+        border: 14px solid transparent;
+        border-top-color: pink;
+      }
+    }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+
+  .fishpin {
+      position: absolute;
+
+      .fishpin-img{
+        z-index: 100;
+        margin-left: 160%;
+        margin-top: -30%
+      }
+    }
+
+  &__item {
+    height: auto;
+    margin: 4% auto;
+    float: left;
+    background-color:rgba(255,255,255,0.7);
+    background-blend-mode:lighten;
+    font-size: 30px;
+    border-radius: 8px;
+    padding: 3px;
+    width: auto;
+  }
+
+  &__image {
+    padding: 5px;
+  }
+
+  &__title {
+    color: #000022;
+    padding-left: 3%;
+  }
+
+  &__comment {
+    color: #000022;
+    padding: 0 3%;
+    float: left;
+    width: 40%;
+  }
+
+  &__user_image {
+    padding-left: 3%;
+    font-size: 20px;
+    color: black;
+  }
+
+  &__contents {
+    padding: 1%;
+    font-size: 12px;
+    height: 70px;
+    border: 0.2px solid black;
+    margin: 2%;
+    max-width: 97%;
+    border-radius: 8px;
+    overflow: scroll;
+    white-space: pre-line;
+  }
+}
+/*ここまで*/
