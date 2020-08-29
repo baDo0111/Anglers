@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:index, :show, :update, :edit]
   root 'homes#index'
+
+  resources :users, only: [:index, :show, :update, :edit]
 
   resources :fishs do
   	resource :fish_comments, only: [:create, :destroy]
