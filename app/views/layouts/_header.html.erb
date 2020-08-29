@@ -1,50 +1,47 @@
-<header>
-  <nav class="main-nav">
-    <div class="container">
+<header class="header">
 
-      <ul class="main-nav__list">
-        <li class="main-nav__logo">
-          <div class="logo-img">
+      <div class="header__logo-img">
             <%= link_to root_path do %>
               <%= image_tag 'Anglers-logo.png', size: "250x120" %></div>
             <% end %>
-        </li>
-      </ul>
+      </div>
 
-      <ul class="main-nav__list">
+    <div class="header__list">
 
-          <% if user_signed_in? %>
+      <% if user_signed_in? %>
 
-            <li class="main-nav__item">
-              <i class="fas fa-home"></i>
-              <%= link_to "ホーム", root_path, class: "main-nav__link" %>
-            </li>
-            <li class="main-nav__item">
-              <i class="fas fa-users-cog"></i>
-              <%= link_to "ユーザー情報編集", edit_user_path(current_user.id), class: "main-nav__link" %>
-            </li>
-            <li class="main-nav__item">
-              <i class="fas fa-sign-out-alt"></i>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "main-nav__link" %>
-            </li>
+        <div class="header__item">
+          <i class="fas fa-home"></i>
+          <%= link_to "ホーム", root_path, class: "header__link" %>
+        </div>
 
-          <% else %>
+        <div class="header__item">
+          <i class="fas fa-users-cog"></i>
+          <%= link_to "ユーザー情報編集", edit_user_path(current_user.id), class: "header__link" %>
+        </div>
 
-            <li class="main-nav__item">
-              <i class="fas fa-home"></i>
-              <%= link_to "ホーム", root_path, class: "main-nav__link" %>
-            </li>
-            <li class="main-nav__item">
-              <i class="fas fa-users"></i>
-              <%= link_to "新規会員登録", new_user_registration_path, class: "main-nav__link" %>
-            </li>
-            <li class="main-nav__item">
-              <i class="fas fa-sign-in-alt"></i>
-              <%= link_to "ログイン", new_user_session_path, class: "main-nav__link" %>
-            </li>
+        <div class="header__item">
+          <i class="fas fa-sign-out-alt"></i>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__link" %>
+        </div>
 
-          <% end %>
-      </ul>
+      <% else %>
+
+        <div class="header__item">
+          <i class="fas fa-home"></i>
+          <%= link_to "ホーム", root_path, class: "header__link" %>
+        </div>
+
+        <div class="header__item">
+          <i class="fas fa-users"></i>
+          <%= link_to "新規会員登録", new_user_registration_path, class: "header__link" %>
+        </div>
+
+        <div class="header__item">
+          <i class="fas fa-sign-in-alt"></i>
+          <%= link_to "ログイン", new_user_session_path, class: "header__link" %>
+        </div>
+
+      <% end %>
     </div>
-  </nav>
 </header>

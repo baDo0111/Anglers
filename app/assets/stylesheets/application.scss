@@ -44,37 +44,36 @@
   font-size: 16px;
  }
 
-header {
+.header {
   height: 110px;
   @include header-footer;
-}
+  display: flex;
+  font-size: 16px;
 
-.main-nav {
-
-  &__logo {
-    display: inline-block;
-      padding: {
-        top: 20px;
-        bottom: 10px;
-    }
+  &__logo-img {
+    padding-top: 20px;
+    margin-left: 13%;
+    margin-right: auto;
   }
 
   &__list {
-    list-style: none;
-    display: inline-block;
-
+    margin: {
+      right: 13%;
+      top: 4%;
+      }
   }
 
   &__item {
     display: inline-block;
-    padding: {
-        right: 15px;
-        left: 15px;
+    margin: {
+      right: 10px;
+      left: 10px;
     }
   }
 
   &__link {
     color: white;
+    font-size: 18px;
   }
 }
 
@@ -256,7 +255,7 @@ body {
 
   .clip {
       position: absolute;
-      top: -12px;
+      top: -12%;
       left: 30%;
 
       .clip-img{
@@ -295,9 +294,15 @@ h1 {
       bottom: 30px;
     }
 }
+
+.UserEdit-form {
+  margin-top: 50px;
+}
+
 .Edit-form {
   margin-top: 50px;
 }
+
 .form {
   height: 450px;
 
@@ -342,9 +347,14 @@ h1 {
     font-size: 15px;
   }
 
-  &__button {
+  &__user-name {  /*ユーザー情報編集画面*/
     @include form-controll;
   }
+
+  &__user-introduction {
+    @include form-controll;
+  }
+
 }
 /*ここまで*/
 
