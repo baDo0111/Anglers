@@ -268,10 +268,6 @@ body {
 /*ここまで*/
 
 /*見出しデザイン*/
-h1 {
-  width:12em;
-  margin:0 auto;
-}
 .under {
   background: linear-gradient(transparent 80%, #a8eaff 20%);
   margin: 0 auto;
@@ -313,7 +309,6 @@ h1 {
 
   &__image {
     @include form-controll;
-    margin-left: 50px;
   }
 
   &__title {
@@ -348,7 +343,7 @@ h1 {
     font-size: 15px;
   }
 
-  &__user-name {  /*ユーザー情報編集画面*/
+  &__user-name {          /*ユーザー情報編集画面デザイン　ここから*/
     @include form-controll;
   }
 
@@ -478,3 +473,58 @@ h1 {
   }
 }
 /*ここまで*/
+
+/*釣果詳細画面デザインここから*/
+
+.user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__image {
+    margin: {
+      top: 3%;
+      bottom: 2%;
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+  }
+
+  &__bottom {}
+}
+
+/*ここまで*/
+
+/*ログイン、サインイン画面*/
+
+.email-field {
+  font-size: 18px;
+  margin: {
+      top: 3%;
+      bottom: 3%;
+  }
+}
+
+.password-field {
+  font-size: 18px;
+  margin: {
+      top: 3%;
+      bottom: 3%;
+  }
+}
+
+/*ここまで*/
+
+
+
+
+
+
+
+
+
+
+
+

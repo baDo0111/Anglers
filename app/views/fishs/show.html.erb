@@ -1,18 +1,31 @@
-<h1 class="text-center">
-	<span class="under">釣果詳細画面</span>
-</h1>
+<div class="under">
+	<h1>釣果詳細画面</h1>
+</div>
+
+
+<div class="user">
+	<div class="user__image">
+		<%= attachment_image_tag @fish.user, :user_image, size: '80x80', fallback: "image5.JPG", class:'img-circle' %>
+	</div>
+
+	<div class="user__name">
+		<%= @fish.user.name %>
+	</div>
+
+	<div class="user__bottom">
+		<% if user_signed_in? && @fish.user == current_user %>
+			<%= link_to "編集する", edit_fish_path, class: "btn btn-success" %>
+			<%= link_to "削除する", fish_path(@fish.id), method: :delete, data:{confirm:"本当に消しますか？"}, class: "btn btn-danger" %>
+		<% end %>
+	</div>
+
+</div>
 
 <div class="row">
 	<div class="col-xs-6">
-		<%= attachment_image_tag @fish, :fish_image, fallback: "image5.JPG", size: '400x400'%>
+		<%= attachment_image_tag @fish, :fish_image, fallback: "image5.JPG", size: '500x400'%>
 	</div>
 	<div class="col-xs-6">
-		<%= attachment_image_tag @fish.user, :user_image, size: '100x100', fallback: "image5.JPG", class:'img-circle' %>
-		<%= @fish.user.name %>
-		<% if user_signed_in? && @fish.user == current_user %>
-				<%= link_to "編集する", edit_fish_path, class: "btn btn-success" %>
-				<%= link_to "削除する", fish_path(@fish.id), method: :delete, data:{confirm:"本当に消しますか？"}, class: "btn btn-danger" %>
-		<% end %>
 			<h3>釣果タイトル</h3>
 			<h4><%= @fish.fishing_title %></h4>
 			<h3>釣果日時</h3>
