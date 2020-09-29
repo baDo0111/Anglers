@@ -101,6 +101,8 @@
 			<%= link_to user_path(fish.user_id) do %>
 				<div class="cards__user_image">
 					<%= attachment_image_tag fish.user, :user_image, size: '45x45', fallback: "image5.JPG", class:'img-circle' %>
+				</div>
+				<div class="cards__user_name">
 					<%= fish.user.name %>
 				</div>
 			<% end %>

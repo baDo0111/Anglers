@@ -2,30 +2,35 @@
 	<h1>釣果詳細画面</h1>
 </div>
 
+<div class="row">
+	<div class="user">
+		<div class="user__image">
+			<%= attachment_image_tag @fish.user, :user_image, size: '80x80', fallback: "image5.JPG", class:'img-circle' %>
+		</div>
 
-<div class="user">
-	<div class="user__image">
-		<%= attachment_image_tag @fish.user, :user_image, size: '80x80', fallback: "image5.JPG", class:'img-circle' %>
+		<div class="user__name">
+			<%= @fish.user.name %>
+		</div>
+
+		<div class="user__button">
+			<% if user_signed_in? && @fish.user == current_user %>
+				<%= link_to "編集する", edit_fish_path, class: "btn btn-success" %>
+				<%= link_to "削除する", fish_path(@fish.id), method: :delete, data:{confirm:"本当に消しますか？"}, class: "btn btn-danger" %>
+			<% end %>
+		</div>
 	</div>
-
-	<div class="user__name">
-		<%= @fish.user.name %>
-	</div>
-
-	<div class="user__bottom">
-		<% if user_signed_in? && @fish.user == current_user %>
-			<%= link_to "編集する", edit_fish_path, class: "btn btn-success" %>
-			<%= link_to "削除する", fish_path(@fish.id), method: :delete, data:{confirm:"本当に消しますか？"}, class: "btn btn-danger" %>
-		<% end %>
-	</div>
-
 </div>
 
 <div class="row">
-	<div class="col-xs-6">
-		<%= attachment_image_tag @fish, :fish_image, fallback: "image5.JPG", size: '500x400'%>
+
+	<div class="col-lg-4 col-xs-12">
+		<div class="fish-image">
+			<%= attachment_image_tag @fish, :fish_image, fallback: "image5.JPG", size: '350x250'%>
+		</div>
 	</div>
-	<div class="col-xs-6">
+
+	<div class="col-lg-4 col-xs-12">
+		<div class="center-form">
 			<h3>釣果タイトル</h3>
 			<h4><%= @fish.fishing_title %></h4>
 			<h3>釣果日時</h3>
@@ -34,23 +39,35 @@
 			<h4><%= @fish.fish_name %></h4>
 			<h3>釣果内容</h3>
 			<h4><%= @fish.fishing_contents %></h4>
+		</div>
+	</div>
+
+	<div class="col-lg-4 col-xs-12">
+		<div class="left-form">
 			<h3>サイズ</h3>
 			<h4><%= @fish.fish_size %>cm</h4>
 			<h3>重量</h3>
 			<h4><%= @fish.fish_weight %>kg</h4>
 			<h3>都道府県</h3>
 			<h4><%= @fish.prefectures %></h4>
+		</div>
 	</div>
-	<%= link_to "戻る", fishs_path, class: "btn btn-success" %>
 </div>
+
+<div class="back-button">
+	<%= link_to "戻る", fishs_path, class: "btn btn-success btn-lg" %>
+</div>
+
 <% if user_signed_in? %>
 	<div class="text-center">
-		<button id="button1" class="btn btn-primary">コメントする</button>
-			<div class="comment-form" id="acMenu" >
-			      <%= form_with model:[@fish, @fish_comment], data: {remote: true} do |f| %>
+		<div id="button1" class="btn btn-primary btn-lg">コメントする</div>
+			<div id="acMenu" >
+				<div class="comment-form">
+					<%= form_with model:[@fish, @fish_comment], data: {remote: true} do |f| %>
 			        <%= f.text_area :comment, size: "90x5" %>
 			        <%= f.submit '送信', class: "btn btn-success" %>
 			      <% end %>
+				</div>
 	    		<table class="comment_<%= @fish.id %>">
 	      			<%= render 'comment', fish_comments: @fish.fish_comments %>
 	    		</table>
