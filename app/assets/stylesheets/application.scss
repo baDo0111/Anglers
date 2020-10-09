@@ -545,17 +545,29 @@ body {
   margin: {
     top: 20px;
     right: 20px;
-    bottom: 80px;
   }
   text-align: right;
 }
 
 .comment-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
 
   &__user-image {
+  float: left;
+  margin-left: 30px;
   }
 
   &__user-name {
+  font-size: 20px;
+  float: right;
+  margin: {
+      top: 20px;
+      right: 20px;
+      left: 5px;
+    }
   }
 }
 
