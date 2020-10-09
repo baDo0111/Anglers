@@ -49,6 +49,11 @@ $(document).on('turbolinks:load', function(){
   $(function(){
         $('#acMenu').toggle();
             $("#button1").click(function(){
+              if ($(this).text() === 'コメント欄を閉じる') {
+                $(this).text('コメントする');
+                  } else {
+                $(this).text('コメント欄を閉じる');
+                  }
                 $("#acMenu").toggle();
         });
     });

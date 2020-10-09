@@ -283,6 +283,13 @@ body {
 #acMenu button {
   cursor:pointer;
 }
+
+#acMenu {
+  margin: {
+    top: 3%;
+  }
+}
+
 /*ここまで*/
 
 /*入力フォームデザイン　ここから*/
@@ -520,11 +527,36 @@ body {
     top: 30px;
     bottom: 30px;
   }
-
-.comment-form {
-  margin-top: 20px;
 }
 
+/*ここまで*/
+
+/*コメント欄デザイン*/
+
+.comment-button {
+  text-align: center;
+}
+
+.comment-form {
+  padding: 25px;
+}
+
+.comment-send-button {
+  margin: {
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+  text-align: right;
+}
+
+.comment-section {
+
+  &__user-image {
+  }
+
+  &__user-name {
+  }
 }
 
 /*ここまで*/
