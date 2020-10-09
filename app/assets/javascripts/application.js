@@ -58,6 +58,15 @@ $(document).on('turbolinks:load', function(){
         });
     });
 });
+
+$(document).on('turbolinks:load', function(){
+  $(function(){
+    $('#ACmenu').toggle();
+      $("#post-button").click(function(){
+        $("#ACmenu").toggle();
+    });
+  });
+});
 // ここまで
 
 //　戻るボタンjs

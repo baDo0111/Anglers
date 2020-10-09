@@ -357,7 +357,6 @@ body {
   &__user-introduction {
     @include form-controll;
   }
-
 }
 /*ここまで*/
 
@@ -551,13 +550,13 @@ body {
 
 .comment-section {
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
   align-items: center;
   margin-bottom: 30px;
 
   &__user-image {
   float: left;
-  margin-left: 30px;
   }
 
   &__user-name {
@@ -565,9 +564,16 @@ body {
   float: right;
   margin: {
       top: 20px;
-      right: 20px;
       left: 5px;
     }
+  }
+
+  &__fish-comment {
+  width: 50%;
+  font-size: 16px;
+  margin-top: 10px;
+  word-wrap: break-word;
+  padding: 10px;
   }
 }
 
@@ -592,15 +598,4 @@ body {
 }
 
 /*ここまで*/
-
-
-
-
-
-
-
-
-
-
-
 

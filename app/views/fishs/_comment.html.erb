@@ -2,7 +2,7 @@
   <div class="comment-section">
     <%= link_to user_path(fish_comment.user), class: "user_#{fish_comment.user.id}" do %>
       <div class="comment-section__user-image">
-        <%= attachment_image_tag fish_comment.user, :user_image, fallback: "no_image.jpg", size: "70x70", class:'img-circle' %>
+        <%= attachment_image_tag fish_comment.user, :user_image, fallback: "no_image.jpg", size: "60x60", class:'img-circle' %>
       </div>
 
       <div class="comment-section__user-name">
@@ -10,7 +10,10 @@
       </div>
     <% end %>
 
-    <%= fish_comment.comment %>
+    <div class="comment-section__fish-comment">
+      <%= fish_comment.comment %>
+    </div>
+
     <% if fish_comment.user == current_user %>
       <%= link_to '削除する', fish_fish_comments_path(fish_comment), class: 'btn btn-danger', data:{confirm:"削除してもよろしいですか？"}, method: :delete, remote: true %>
     <% end %>
