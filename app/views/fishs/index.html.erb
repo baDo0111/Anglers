@@ -5,17 +5,17 @@
 
 <div class="btn-center">
 	<div class="balloon">釣果の投稿はこちら！！</div>
-	<div class="btn-center__square" id="button1">釣果を投稿する</div>
+	<div class="btn-center__square" id="post-button">釣果を投稿する</div>
 </div>
 
-<div id="acMenu">
+<div id="ACmenu">
 	<div class="row">
 		<%= form_with model:@fish, url: {controller: 'fishs', action: 'create' } do |f| %>
 			<div class="form">
-				<div class="col-lg-4 col-xs-12">
+				<div class="col-lg-4 col-xs-12 text-center">
 
 					<div class="form__image">
-						<%= attachment_image_tag @fish, :fish_image, size: "300x300", fallback: "no_image.jpg", id:"img1" %>
+						<%= attachment_image_tag @fish, :fish_image, size: "350x250", fallback: "no_image.jpg", id:"img1" %>
 						<%= f.attachment_field :fish_image, id:"myfile" %>
 					</div>
 

@@ -10,7 +10,10 @@
       </div>
     <% end %>
 
-    <%= fish_comment.comment %>
+    <div class="comment-section__fish-comment">
+      <%= fish_comment.comment %>
+    </div>
+
     <% if fish_comment.user == current_user %>
       <%= link_to '削除する', fish_fish_comments_path(fish_comment), class: 'btn btn-danger', data:{confirm:"削除してもよろしいですか？"}, method: :delete, remote: true %>
     <% end %>
