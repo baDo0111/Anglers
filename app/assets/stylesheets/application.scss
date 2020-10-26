@@ -231,23 +231,54 @@ body {
     background-color:rgba(255,255,255,0.6);
     background-blend-mode: lighten;
     padding: 20px;
+    cursor : pointer;
+    user-select: none;
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Safari、Chromeなど */
+    -ms-user-select: none; /* IE10かららしい */
+  }
+
+  @mixin content {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  &__description {
+    margin-top: 10px;
   }
 
   &__step1 {
     @include step;
-    margin-top: 60px;
+    margin-top: 50px;
   }
+
+  &__content1 {
+    @include content;
+  }
+
+  &__content1--red {
+      color: red;
+    }
 
   &__step2 {
     @include step;
   }
 
+  &__content2 {
+    @include content;
+  }
+
   &__step3 {
     @include step;
+    margin-bottom: 30px;
+  }
+
+  &__content3 {
+    @include content;
   }
 
   &__subtitle {
-      font-size: 25px;
+      font-size: 23px;
     }
 }
 
@@ -260,7 +291,7 @@ body {
 }
 
 .card {
-  margin-top: 100px;
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -305,6 +336,11 @@ body {
     }
 }
 
+.fishindex-button {
+  text-align: center;
+  margin-top: 30px;
+}
+
 /*ここまで*/
 
 /*見出しデザイン*/
@@ -312,9 +348,10 @@ body {
   background: linear-gradient(transparent 80%, #a8eaff 20%);
   margin: 0 auto;
   text-align:center;
+  font-size: 30px;
 }
 .under:first-letter {
-  font-size: 150%;
+  font-size: 35px;
   color: #eb6100;
 }
 /*ここまで*/
