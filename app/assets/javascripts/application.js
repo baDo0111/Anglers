@@ -16,7 +16,7 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-jQuery(document).on('turbolinks:load', function(){
+$(document).on('turbolinks:load', function(){
     $(document).ready(function () {
       $("#theTarget").skippr({
         // スライドショーの変化 ("fade" or "slide")
@@ -70,7 +70,7 @@ $(document).on('turbolinks:load', function(){
 // ここまで
 
 //　戻るボタンjs
-jQuery(document).on('turbolinks:load', function(){
+$(document).on('turbolinks:load', function(){
     $(function(){
       var pagetop = $('#back a');
       // ボタン非表示
@@ -92,7 +92,7 @@ jQuery(document).on('turbolinks:load', function(){
 //　ここまで
 
 //　プレビュー機能
-jQuery(document).on('turbolinks:load', function(){
+$(document).on('turbolinks:load', function(){
     $(function(){
       $('#myfile').change(function(e){
         //ファイルオブジェクトを取得する
