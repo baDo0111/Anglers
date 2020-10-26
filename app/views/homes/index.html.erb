@@ -48,15 +48,23 @@
 	</div>
 </div>
 
-<div class="under"><h1>投稿の手順</h1></div>
+<div class="under">投稿の手順</div>
 
 <div class="step">
 	<div class="step__step1">
 		<div class="step__subtitle" id="subtitle1">
 			Step1.　新規会員登録/（ゲスト）ログインを行なって下さい。　▼
 		</div>
-		<div id="content1">
-			aaaaaaa
+		<div class="step__content1" id="content1">
+			<%= image_tag 'step1.png', width: '100%', height: '150px', class: "img-responsive" %>
+			<div class="step__description">
+				新規会員登録がお済みで無い方は画面最上部から新規会員登録を行なって下さい。<br>
+				会員登録がお済みの方はログインからサービスをご利用ください。
+				<div class="step__content1--red">
+					＊新規会員登録/（ゲスト）ログインを行なっていないと投稿ができません。
+					尚、投稿の閲覧は可能です。
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -66,10 +74,12 @@
 <div class="step">
 	<div class="step__step2" >
 		<div class="step__subtitle" id="subtitle2">
-			Step2.　『投稿画面一覧へ』をクリック。　▼
+			Step2.
+			　『<%= link_to fishs_path do %>釣果・投稿画面一覧へ<% end %>』
+			をクリック。　▼
 		</div>
-		<div id="content2">
-			aaaaaaaaaaaaa
+		<div class="step__content2" id="content2">
+			<%= image_tag 'step2.png', width: '60%', class: "img-responsive center-block" %>
 		</div>
 	</div>
 </div>
@@ -79,13 +89,19 @@
 <div class="step">
 	<div class="step__step3">
 		<div class="step__subtitle" id="subtitle3">
-			Step3.　『投稿する』ボタンを押して投稿！！　▼
+			Step3.　『釣果を投稿する』ボタンを押して投稿！！　▼
 		</div>
-		<div id="content3">
-			aaaaaaaaaaaaa
+		<div class="step__content3" id="content3">
+			・下記の画像の『釣果を投稿する』ボタンを押します。
+			<%= image_tag 'step3.png', width: '70%', class: "img-responsive center-block" %>
+			<br>
+			・入力フォームが開きます。入力をして頂き『投稿する』ボタンで思い出をみんなと共有しましょう！
+			<%= image_tag 'step3-2.png', width: '70%', class: "img-responsive center-block" %>
 		</div>
 	</div>
 </div>
+
+<div class="under">釣果・投稿画面一覧へ</div>
 
 <div class="card">
 	<div class="clip">
@@ -95,5 +111,11 @@
 		<div class="card__image">
 			<%= image_tag '3598075_3.jpg', size: '500x400' , class: "img-responsive" %>
 		</div>
+	<% end %>
+</div>
+
+<div class="fishindex-button">
+	<%= link_to fishs_path do %>
+		<div class="btn btn-primary btn-lg">釣果・投稿画面一覧へ</div>
 	<% end %>
 </div>
