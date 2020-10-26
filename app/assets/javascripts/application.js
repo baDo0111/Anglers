@@ -118,3 +118,24 @@ $(document).on('turbolinks:load', function(){
     });
 });
 // ここまで
+
+// ホームインデックス トグル機能
+$(document).on('turbolinks:load', function(){
+  $(function(){
+    $('#content1').toggle();
+      $("#subtitle1").click(function(){
+        $("#content1").toggle();
+    });
+
+    $('#content2').toggle();
+      $("#subtitle2").click(function(){
+        $("#content2").toggle();
+    });
+
+    $('#content3').toggle();
+      $("#subtitle3").click(function(){
+        $("#content3").toggle();
+    });
+  });
+});
+//ここまで
