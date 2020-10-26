@@ -26,7 +26,7 @@
 #back {
   position: fixed;
   right: 300px;
-  bottom: 20px;
+  bottom: 40px;
   z-index: 100;
     img {
     width: 50px;
@@ -220,12 +220,52 @@ body {
   }
 }
 
+.step {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  width: 96%;
+
+  @mixin step {
+    background-color:rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+    padding: 20px;
+  }
+
+  &__step1 {
+    @include step;
+    margin-top: 60px;
+  }
+
+  &__step2 {
+    @include step;
+  }
+
+  &__step3 {
+    @include step;
+  }
+
+  &__subtitle {
+      font-size: 25px;
+    }
+}
+
+.bar {
+  display: block;
+  width: 98%;
+  height: 1px;
+  border: 0;
+  border-top: 1px dashed black;
+}
+
 .card {
-  margin-top: 40px;
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+
   &:after {
     position: absolute;
     display: block;
@@ -233,9 +273,9 @@ body {
     top: 20;
     left: 50;
     width: 500px;
-    height: 300px;
+    height: 290px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transform: rotate(3deg);
+    transform: rotate(1deg);
     background: #fff;
     z-index: -1;
   }
@@ -247,16 +287,16 @@ body {
     top: 20;
     left: 50;
     width: 500px;
-    height: 300px;
+    height: 290px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transform: rotate(-3deg);
+    transform: rotate(-2deg);
     background: #fff;
     z-index: -1;
   }
 
   .clip {
       position: absolute;
-      top: -12%;
+      top: -8%;
       left: 30%;
 
       .clip-img{
