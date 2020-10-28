@@ -75,7 +75,25 @@
     color: white;
     font-size: 18px;
   }
+}
 
+/*ここまで*/
+
+/*Flash Messege デザイン*/
+
+.flash-massege {
+  font-size: 20px;
+  text-align: center;
+
+  &__notice {
+    background-color: #00FFFF;
+    letter-spacing: 0.1em
+  }
+
+  &__alert {
+    background-color: #FF6633;
+    letter-spacing: 0.1em
+  }
 }
 
 /*ここまで*/
