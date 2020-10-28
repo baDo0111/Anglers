@@ -1,5 +1,7 @@
 class FishsController < ApplicationController
 before_action :authenticate_user!
+before_action :ensure_correct_user, only:[:edit, :update, :destroy]
+
   def new
   end
 
@@ -42,6 +44,13 @@ before_action :authenticate_user!
   def fish_params
     params.require(:fish).permit(:fishing_title, :fish_name, :fishing_contents,
       :fishing_date, :fish_size, :fish_weight, :prefectures, :fish_image)
+  end
+
+  def ensure_correct_user
+    @fish = Fish.find(params[:id])
+    unless @fish.user == current_user
+      redirect_to fishs_path
+    end
   end
 
 end

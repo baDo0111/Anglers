@@ -1,6 +1,4 @@
-<div class="under">
-  <h1>ユーザー情報編集画面</h1>
-</div>
+<div class="under">ユーザー情報編集画面</div>
 
 <div class="UserEdit-form">
   <%= form_for @user do |f| %>
@@ -8,7 +6,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
       <div class="form__image">
-        <%= attachment_image_tag @user, :user_image, size: "300x300", fallback: "no_image.jpg", id:"img1" %>
+        <%= attachment_image_tag @user, :user_image, size: "400x300", fallback: "no_image.jpg", id:"img1" %>
         <%= f.attachment_field :user_image, id:"myfile" %>
       </div>
 
@@ -29,7 +27,7 @@
 
 
       <div class="form__edituser-button text-center">
-      <%= f.submit "Update User", class: "btn btn-primary" %>
+      <%= f.submit "情報を更新する", class: "btn btn-primary" %>
       </div>
 
     </div>
