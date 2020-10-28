@@ -1,5 +1,5 @@
 class FishsController < ApplicationController
-before_action :authenticate_user!
+before_action :authenticate_user!, only:[:edit, :create, :update, :destroy]
 before_action :ensure_correct_user, only:[:edit, :update, :destroy]
 
   def new
@@ -22,21 +22,38 @@ before_action :ensure_correct_user, only:[:edit, :update, :destroy]
 
   def update
     @fish = Fish.find(params[:id])
-    @fish.update(fish_params)
-    redirect_to @fish
+    if @fish.user_id = current_user.id
+      @fish.update(fish_params)
+      redirect_to fishs_path
+      flash[:notice] = "投稿を更新しました。"
+    else
+      redirect_to fishs_path
+      flash[:alert] = "投稿の更新に失敗しました。"
+    end
   end
 
   def create
     @fish = Fish.new(fish_params)
-    @fish.user_id = current_user.id
-    @fish.save
-    redirect_to fishs_path
+    if @fish.user_id = current_user.id
+      @fish.save
+      redirect_to fishs_path
+      flash[:notice] = "正しく投稿することが出来ました。"
+    else
+      redirect_to fishs_path
+      flash[:alert] = "投稿できませんでした。"
+    end
   end
 
   def destroy
     @fish = Fish.find(params[:id])
-    @fish.destroy
-    redirect_to fishs_path
+    if @fish.user_id = current_user.id
+      @fish.destroy
+      redirect_to fishs_path
+      flash[:notice] = "投稿を削除しました。"
+    else
+      redirect_to fishs_path
+      flash[:alert] = "投稿の削除に失敗しました。"
+    end
   end
 
   private
