@@ -18,6 +18,23 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+/*レスポンシブデザインここから*/
+
+$tab: 680px;
+$sp: 480px;
+
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+/*ここまで*/
+
 * {
    box-sizing: border-box;
 }
@@ -42,6 +59,7 @@
   background-color: rgba(0,0,0,0.4);
   color: white;
   font-size: 16px;
+  letter-spacing: 0.06em;
  }
 
 .header {
@@ -57,6 +75,13 @@
   }
 
   &__list {
+    @include tab {
+      display: none;
+    };
+    @include sp {
+      display: none;
+    };
+
     margin: {
       right: 13%;
       top: 4%;
@@ -87,12 +112,12 @@
 
   &__notice {
     background-color: #00FFFF;
-    letter-spacing: 0.1em
+    letter-spacing: 0.1em;
   }
 
   &__alert {
     background-color: #FF6633;
-    letter-spacing: 0.1em
+    letter-spacing: 0.1em;
   }
 }
 
@@ -364,9 +389,10 @@ body {
 /*見出しデザイン*/
 .under {
   background: linear-gradient(transparent 80%, #a8eaff 20%);
-  margin: 0 auto;
+  margin-top: 20px;
   text-align:center;
   font-size: 30px;
+  letter-spacing: 0.05em;
 }
 .under:first-letter {
   font-size: 35px;
