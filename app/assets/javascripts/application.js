@@ -30,7 +30,7 @@ $(document).on('turbolinks:load', function(){
         // 子要素の種類("div" or "img")
         childrenElementType : 'div',
         // ナビゲーション矢印の表示(trueで表示)
-        arrows : true,
+        arrows : false,
         // スライドショーの自動再生(falseで自動再生なし)
         autoPlay : true,
         // 自動再生時のスライド切替間隔(ミリ秒)
@@ -145,3 +145,15 @@ $(document).on('turbolinks:load', function(){
   });
 });
 //ここまで
+
+// ハンバーガーメニュー
+$(document).on('turbolinks:load', function(){
+  $(function() {
+    $('.Menu-trigger').on('click', function(event) {
+      $(this).toggleClass('active');
+        $('#HB-menu').fadeToggle();
+      event.preventDefault();
+    });
+  });
+});
+// ここまで
