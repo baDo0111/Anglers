@@ -69,6 +69,12 @@ $(document).on('turbolinks:load', function(){
 });
 // ここまで
 
+// フラッシュメッセージのフェードアウト
+$(function(){
+  setTimeout("$('.flash-massege').fadeOut('slow')", 3000);
+});
+// ここまで
+
 //　戻るボタンjs
 $(document).on('turbolinks:load', function(){
     $(function(){
