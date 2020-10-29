@@ -59,7 +59,7 @@ $sp: 480px;
   background-color: rgba(0,0,0,0.4);
   color: white;
   font-size: 16px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
  }
 
 .header {
@@ -70,8 +70,20 @@ $sp: 480px;
 
   &__logo-img {
     padding-top: 20px;
-    margin-left: 13%;
+    margin-left: 10%;
     margin-right: auto;
+
+    @include tab {
+      margin-left: 3%;
+    };
+    @include sp {
+      margin-left: 3%;
+    };
+  }
+
+  img.size {
+    width: 50%;
+    heght: 30%;
   }
 
   &__list {
@@ -83,7 +95,7 @@ $sp: 480px;
     };
 
     margin: {
-      right: 13%;
+      right: 10%;
       top: 4%;
       }
   }
