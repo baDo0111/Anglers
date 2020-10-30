@@ -151,8 +151,20 @@ $(document).on('turbolinks:load', function(){
   $(function() {
     $('.Menu-trigger').on('click', function(event) {
       $(this).toggleClass('active');
-        $('#HB-menu').fadeToggle();
+        $('.HB-menu').fadeToggle();
       event.preventDefault();
+    });
+  });
+});
+
+$(document).on('turbolinks:load', function(){
+  $(function(){
+    $('#letter').on('click', function () {
+      if ($(this).text() === 'Menu') {
+          $(this).text('Close');
+      } else {
+          $(this).text('Menu');
+      }
     });
   });
 });

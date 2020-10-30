@@ -68,77 +68,87 @@ $sp: 560px;
 
 /*ハンバーガーメニューここから*/
 
-  #HB-icon{
-  position: fixed;
-  right: 20px;
+#HB-icon{
+  position: absolute;
+  right: 5%;
   top: 20px;
   z-index: 30;
   @include pc {
       display: none;
     };
-  }
-  .Menu-trigger,
-  .Menu-trigger span {
-    display: inline-block;
-    transition: all .4s;
-    box-sizing: border-box;
-  }
-  .Menu-trigger {
-    position: relative;
-    width: 50px;
-    height: 44px;
-  }
-  .Menu-trigger span {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #000;
-    border-radius: 4px;
-  }
-  .Menu-trigger span:nth-of-type(1) {
-    top: 0;
-  }
-  .Menu-trigger span:nth-of-type(2) {
-    top: 20px;
-  }
-  .Menu-trigger span:nth-of-type(3) {
-    bottom: 0;
-  }
-  .Menu-trigger.active span:nth-of-type(1) {
-    -webkit-transform: translateY(20px) rotate(-45deg);
-    transform: translateY(20px) rotate(-45deg);
-    background-color: #fff;
-  }
-  .Menu-trigger.active span:nth-of-type(2) {
-    opacity: 0;
-  }
-  .Menu-trigger.active span:nth-of-type(3) {
-    -webkit-transform: translateY(-20px) rotate(45deg);
-    transform: translateY(-20px) rotate(45deg);
-    background-color: #fff;
+}
+.Menu-trigger,
+.Menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.Menu-trigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+}
+.Menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.Menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.Menu-trigger span:nth-of-type(2) {
+  top: 13px;
+}
+.Menu-trigger span:nth-of-type(3) {
+  bottom: 13px;
+}
+#letter {
+  padding-top: 31px;
+  font-weight: 700;
+  color: #f5f5f5;
+  position: absolute;
+}
+
+.Menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(7px) rotate(-45deg);
+  background-color: #fff;
+}
+.Menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.Menu-trigger.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-20px) rotate(45deg);
+  background-color: #fff;
+}
+
+.HB-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  width: 100%;
+  min-height: 100%;
+  display: none;
+  z-index: 29;
+  text-align: center;
+
+  &__caption {
+    font-size: 30px;
+    margin: {
+      top: 100px;
+      bottom: 30px;
+    }
   }
 
-  #HB-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #000;
-    color: #fff;
-    width: 100%;
-    min-height: 100%;
-    display: none;
-    z-index: 29;
-  }
-  #HB-menu li{
-    text-align: center;
+  &__list {
     margin-bottom: 30px;
   }
-  #HB-menu a{
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
+}
 
 /*ここまで*/
 
@@ -159,6 +169,10 @@ $sp: 560px;
   display: flex;
   font-size: 16px;
 
+  @include sp {
+    height: 80px;
+  };
+
   &__logo-img {
     padding-top: 20px;
     margin-left: 10%;
@@ -170,11 +184,6 @@ $sp: 560px;
     @include sp {
       margin-left: 3%;
     };
-  }
-
-  img.size {
-    width: 50%;
-    heght: 20%;
   }
 
   &__list {
@@ -189,13 +198,13 @@ $sp: 560px;
       right: 10%;
       top: 4%;
       }
+    white-space: nowrap;
   }
 
   &__item {
     display: inline-block;
     margin: {
-      right: 10px;
-      left: 10px;
+      right: 3%;
     }
   }
 
@@ -241,7 +250,6 @@ body {
 /*フッターデザイン*/
 
 .footer {
-  laft: 50%;
   margin-top: 50px;
 	height: 170px;
   position: relative;
@@ -292,7 +300,7 @@ body {
  width: 90%;
  margin: 2.5em auto;
  padding: 35px 30px 20px;
- color: white;/* 文字色 */
+ color: white;
  background-color: #e8ddbd; /*枠背景色*/
  box-shadow: inset 0 0 40px rgba(204, 186, 136,1), 2px 10px 10px #333;
 
@@ -321,7 +329,7 @@ body {
   @mixin image {
         background-color: #7f7f7f;
         background-blend-mode: soft-light;
-  }
+      }
 
   @mixin letter {
         color: white;
@@ -331,14 +339,14 @@ body {
         position: absolute;
         bottom: 100px;
         left: 100px;
-  }
+      }
 
   @mixin letter-p {
         position: absolute;
         bottom: 45px;
         left: 150px;
         font-size: 20px;
-  }
+      }
 
       .image1 {
         background-image: image-url("image1.JPG");
@@ -350,7 +358,7 @@ body {
           &__letter-p {
           @include letter-p;
           }
-  }
+      }
       .image2 {
         background-image: image-url("image2.JPG");
         @include image;
@@ -373,6 +381,20 @@ body {
   }
 }
 
+.sptab-image {
+  width: 100%;
+
+  @include pc {
+    display: none;
+  };
+  @include tab {
+    height: 400px;
+  };
+  @include sp {
+    height: 250px;
+  };
+}
+
 .step {
   margin: {
     left: auto;
@@ -386,9 +408,9 @@ body {
     padding: 20px;
     cursor : pointer;
     user-select: none;
-    -moz-user-select: none; /* Firefox */
-    -webkit-user-select: none; /* Safari、Chromeなど */
-    -ms-user-select: none; /* IE10かららしい */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
 
   @mixin content {
@@ -402,7 +424,7 @@ body {
 
   &__step1 {
     @include step;
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   &__content1 {
@@ -431,7 +453,14 @@ body {
   }
 
   &__subtitle {
-      font-size: 23px;
+      font-size: 24px;
+
+      @include tab {
+        font-size: 21px;
+      };
+      @include sp {
+        font-size: 15px;
+      };
     }
 }
 
@@ -444,7 +473,7 @@ body {
 }
 
 .card {
-  margin-top: 60px;
+  margin-top: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -496,6 +525,13 @@ body {
       position: absolute;
       top: -8%;
       left: 30%;
+
+      @include tab {
+        display: none;
+      };
+      @include sp {
+        display: none;
+      };
 
       .clip-img{
         z-index: 100;
