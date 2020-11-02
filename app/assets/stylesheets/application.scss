@@ -251,45 +251,46 @@ body {
 
 .footer {
   margin-top: 50px;
-	height: 170px;
-  position: relative;
-
   @include header-footer;
-    &__copyright {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: {
-        top: 130px;
-      }
-    }
 
-    .twitter {
-      position: absolute;
-      left: 40%;
-      top: 40%;
-      .twitter-icon {
-        z-index: 100;
-      }
+  &__copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: {
+      top: 3%;
+      bottom: 2%;
     }
+  }
 
-    .insta {
-      position: absolute;
-      left: 50%;
-      top: 40%;
+  .SNS {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 2%;
+
+    &__insta {
       .insta-icon {
         z-index: 100;
       }
     }
 
-    .facebook {
-      position: absolute;
-      left: 60%;
-      top: 40%;
+    &__twitter {
+      padding: {
+        right: 2%;
+        left: 2%;
+      }
+          .twitter-icon {
+            z-index: 100;
+          }
+    }
+
+    &__facebook {
       .facebook-icon {
         z-index: 100;
       }
     }
+  }
 }
 
 /*ここまで*/
@@ -470,6 +471,7 @@ body {
   height: 1px;
   border: 0;
   border-top: 1px dashed black;
+  margin-left: 2%;
 }
 
 .card {
@@ -777,35 +779,56 @@ body {
 
   &__image {
     margin: {
-      top: 3%;
+      top: 2%;
       bottom: 2%;
-      left: 5%;
+      right: 2%;
+      left: 4%;
     }
   }
 
   &__name {
     font-size: 25px;
-    margin-left: 30px;
+    .Userlink {
+      color: black;
+    }
   }
 
   &__button {
-    margin-left: 40px;
+    margin-left: 2%;
   }
 }
 
-.fish-image {
-  text-align : center;
-}
+.show-form {
+  &__title {
+    background-color:rgba(255,255,255,0.7);
+    width: 90%;
+    margin: 10px auto;
+    font-size: 24px;
+    border-radius: 7px;
+    padding: {
+      left: 10px;
+      top: 6px;
+    }
 
-.center-form, .left-form {
-  padding-left: 60px;
+    &-contents {
+      font-size: 18px;
+      padding: {
+        left: 10px;
+        top: 6px;
+      }
+    }
+  }
+
+  &__date {
+    background-color:rgba(255,255,255,0.7);
+  }
 }
 
 .back-button {
-  padding-left: 60px;
+  padding-left: 6%;
   margin: {
-    top: 30px;
-    bottom: 30px;
+    top: 3%;
+    bottom: 3%;
   }
 }
 
