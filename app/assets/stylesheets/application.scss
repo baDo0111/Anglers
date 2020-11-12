@@ -280,9 +280,9 @@ body {
         right: 2%;
         left: 2%;
       }
-          .twitter-icon {
-            z-index: 100;
-          }
+        .twitter-icon {
+          z-index: 100;
+        }
     }
 
     &__facebook {
@@ -384,6 +384,7 @@ body {
 
 .sptab-image {
   width: 100%;
+  padding-top: 3%;
 
   @include pc {
     display: none;
@@ -467,7 +468,7 @@ body {
 
 .bar {
   display: block;
-  width: 98%;
+  width: 96%;
   height: 1px;
   border: 0;
   border-top: 1px dashed black;
