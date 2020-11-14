@@ -1,5 +1,5 @@
 class FishsController < ApplicationController
-before_action :authenticate_user!, only:[:edit, :create, :update, :destroy]
+before_action :authenticate_user!, only:[:edit, :create, :update, :destroy, :index]
 before_action :ensure_correct_user, only:[:edit, :update, :destroy]
 
   def new
