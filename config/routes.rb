@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   	resource :fish_comments, only: [:create, :destroy]
   	resource :favorites, only: [:create, :destroy]
   end
+
+  resources :inquiries, only: [:index, :create]
 end
