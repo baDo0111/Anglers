@@ -262,35 +262,6 @@ body {
       bottom: 2%;
     }
   }
-
-  .SNS {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 2%;
-
-    &__insta {
-      .insta-icon {
-        z-index: 100;
-      }
-    }
-
-    &__twitter {
-      padding: {
-        right: 2%;
-        left: 2%;
-      }
-        .twitter-icon {
-          z-index: 100;
-        }
-    }
-
-    &__facebook {
-      .facebook-icon {
-        z-index: 100;
-      }
-    }
-  }
 }
 
 /*ここまで*/

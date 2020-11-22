@@ -1,6 +1,7 @@
 class InquiriesController < ApplicationController
-	def new
+	def index
 		@inquiry = Inquiry.new
+		render "inquiry_mailer/index"
 	end
 
 	def create
@@ -10,7 +11,7 @@ class InquiriesController < ApplicationController
 	    redirect_to root_path, notice: 'メールが送信されました。'
 	    else
 	      @inquiry.errors.full_messages
-	      render :new
+	      render :index
 	   	end
 	end
 
