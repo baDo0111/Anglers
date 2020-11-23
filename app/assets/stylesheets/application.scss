@@ -164,7 +164,7 @@ $sp: 560px;
  }
 
 .header {
-  height: 110px;
+  height: 120px;
   @include header-footer;
   display: flex;
   font-size: 16px;
@@ -175,14 +175,16 @@ $sp: 560px;
 
   &__logo-img {
     padding-top: 20px;
-    margin-left: 10%;
-    margin-right: auto;
+    padding-left: 3%;
+    width: 15%;
 
     @include tab {
-      margin-left: 3%;
+      padding-left: 3%;
+      width: 30%;
     };
     @include sp {
-      margin-left: 3%;
+      padding-left: 3%;
+      width: 30%;
     };
   }
 
@@ -195,15 +197,20 @@ $sp: 560px;
     };
 
     margin: {
-      right: 10%;
+      left: 23%;
       top: 4%;
       }
     white-space: nowrap;
+    width: 60%;
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
   }
 
   &__item {
     display: inline-block;
-    margin: {
+    padding: {
       right: 3%;
     }
   }
@@ -244,6 +251,7 @@ body {
   background-size: cover;
   background-color:rgba(255,255,255,0.4);
   background-blend-mode:lighten;
+  width: 100%;
 }
 /*ここまで*/
 
@@ -857,20 +865,32 @@ body {
 
 /*ログイン、サインイン画面*/
 
-.email-field {
+.email-field,
+.password-field,
+.message-field,
+.name-field {
   font-size: 18px;
   margin: {
       top: 3%;
       bottom: 3%;
   }
+  input[type="text"] {
+        width: 60%;
+        height: 5%;
+    }
+  input[type="email"] {
+        width: 60%;
+        height: 5%;
+    }
+
+  input[type="password"] {
+        width: 60%;
+        height: 5%;
+    }
 }
 
-.password-field {
-  font-size: 18px;
-  margin: {
-      top: 3%;
-      bottom: 3%;
-  }
+.message_input {
+  width: 60%;
 }
 
 /*ここまで*/

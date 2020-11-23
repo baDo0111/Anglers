@@ -2,7 +2,7 @@
 
     <div class="header__logo-img">
       <%= link_to root_path do %>
-        <%= image_tag 'Anglers-logo.png', width: '45%', class: "img-responsive" %>
+        <%= image_tag 'Anglers-logo.png', class: "img-responsive" %>
       <% end %>
     </div>
 
@@ -12,37 +12,57 @@
 
       <div class="HB-menu__list">
           <% if user_signed_in? %>
+
             <div class="HB-menu__list">
               <%= link_to root_path, class: "header__link" do %>
                 <i class="fas fa-home"> ホームに戻る</i>
               <% end %>
             </div>
+
             <div class="HB-menu__list">
               <%= link_to edit_user_path(current_user.id), class: "header__link" do %>
                   <i class="fas fa-users-cog"> ユーザー情報編集</i>
                 <% end %>
             </div>
+
+            <div class="HB-menu__list">
+              <%= link_to inquiries_path, class: "header__link" do %>
+                <i class="fas fa-envelope"> お問い合わせ</i>
+              <% end %>
+            </div>
+
             <div class="HB-menu__list">
               <%= link_to destroy_user_session_path, method: :delete, class: "header__link" do %>
                 <i class="fas fa-sign-out-alt"> ログアウト</i>
               <% end %>
             </div>
+
           <% else %>
+
             <div class="HB-menu__list">
               <%= link_to root_path, class: "header__link" do %>
                 <i class="fas fa-home"> ホームに戻る</i>
               <% end %>
             </div>
+
             <div class="HB-menu__list">
               <%= link_to new_user_registration_path, class: "header__link" do %>
                 <i class="fas fa-users"> 新規会員登録</i>
               <% end %>
             </div>
+
+            <div class="HB-menu__list">
+              <%= link_to inquiries_path, class: "header__link" do %>
+                <i class="fas fa-envelope"> お問い合わせ</i>
+              <% end %>
+            </div>
+
             <div class="HB-menu__list">
               <%= link_to new_user_session_path, class: "header__link" do %>
                 <i class="fas fa-sign-in-alt"> ログイン</i>
               <% end %>
             </div>
+
           <% end %>
         </div>
       </div>
@@ -73,6 +93,12 @@
         </div>
 
         <div class="header__item">
+          <%= link_to inquiries_path, class: "header__link" do %>
+            <i class="fas fa-envelope"> お問い合わせ</i>
+          <% end %>
+        </div>
+
+        <div class="header__item">
           <%= link_to destroy_user_session_path, method: :delete, class: "header__link" do %>
             <i class="fas fa-sign-out-alt"> ログアウト</i>
           <% end %>
@@ -89,6 +115,18 @@
         <div class="header__item">
           <%= link_to new_user_registration_path, class: "header__link" do %>
             <i class="fas fa-users"> 新規会員登録</i>
+          <% end %>
+        </div>
+
+        <div class="header__item">
+          <%= link_to inquiries_path, class: "header__link" do %>
+            <i class="fas fa-envelope"> お問い合わせ</i>
+          <% end %>
+        </div>
+
+        <div class="header__item">
+          <%= link_to homes_guest_sign_in_path, method: :post, class: "header__link" do %>
+            <i class="fas fa-envelope"> ゲストログイン(閲覧用)</i>
           <% end %>
         </div>
 

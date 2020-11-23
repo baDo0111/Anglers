@@ -7,11 +7,11 @@ class InquiriesController < ApplicationController
 	def create
 	    @inquiry = Inquiry.new(inquiry_params)
 	    if @inquiry.save
-	    InquiryMailer.send_mail(@inquiry).deliver_now
-	    redirect_to root_path, notice: 'メールが送信されました。'
+	    	InquiryMailer.send_mail(@inquiry).deliver_now
+	    	redirect_to root_path, notice: 'メールが送信されました。'
 	    else
-	      @inquiry.errors.full_messages
-	      render :index
+	    	@inquiry.errors.full_messages
+	    	render "inquiry_mailer/index"
 	   	end
 	end
 

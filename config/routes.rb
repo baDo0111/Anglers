@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   end
 
   resources :inquiries, only: [:index, :create]
+
+  post '/homes/guest_sign_in', to: 'homes#new_guest'
 end
