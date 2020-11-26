@@ -52,6 +52,12 @@
             </div>
 
             <div class="HB-menu__list">
+              <%= link_to homes_guest_sign_in_path, method: :post, class: "header__link" do %>
+                <i class="fas fa-user"> ゲストログイン(閲覧用)</i>
+              <% end %>
+            </div>
+
+            <div class="HB-menu__list">
               <%= link_to inquiries_path, class: "header__link" do %>
                 <i class="fas fa-envelope"> お問い合わせ</i>
               <% end %>
@@ -126,7 +132,7 @@
 
         <div class="header__item">
           <%= link_to homes_guest_sign_in_path, method: :post, class: "header__link" do %>
-            <i class="fas fa-envelope"> ゲストログイン(閲覧用)</i>
+            <i class="fas fa-user"> ゲストログイン(閲覧用)</i>
           <% end %>
         </div>
 
