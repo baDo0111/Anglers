@@ -1,6 +1,10 @@
 ## サイト概要
 釣り人同士が釣った魚を写真と共に共有できるサイトです。
 
+<img width="1680" alt="スクリーンショット 2020-11-26 10 48 56" src="https://user-images.githubusercontent.com/64691328/100345093-281f5f80-3025-11eb-9709-9656e8ed13bd.png">
+
+<img width="1680" alt="スクリーンショット 2020-11-26 10 49 28" src="https://user-images.githubusercontent.com/64691328/100345395-9cf29980-3025-11eb-82c5-b34a99318e47.png">
+
 ### サイトテーマ
 釣って楽しい、（記録/想い出を）残して楽しい。
 

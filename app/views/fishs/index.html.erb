@@ -92,8 +92,10 @@
 					<%= fish.fish_comments.count %>件
 			</div>
 
-			<div id="favorite_buttons_<%= fish.id %>">
+			<div class="cards__favorite">
+				<div id="favorite_buttons_<%= fish.id %>">
 					<%= render partial: 'fishs/favorite', locals: {fish: fish} %>
+				</div>
 			</div>
 
 			<%= link_to user_path(fish.user_id) do %>
