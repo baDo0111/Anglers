@@ -23,6 +23,9 @@
 釣り人にとって、とても有意義な時間です。<br>
 そんなシーンに使ってもらいたいと思い制作しました。<br>
 
+# AWS構成図
+<img width="603" alt="スクリーンショット 2020-11-26 21 47 28" src="https://user-images.githubusercontent.com/64691328/100352961-1e035e00-3031-11eb-83ae-29cd92e3c023.png">
+
 # 使用技術
 ・Ruby 2.5.7<br>
 ・Ruby on Rails 5.2.4.3<br>
@@ -30,20 +33,20 @@
 ・Nginx<br>
 ・Puma<br>
 ・AWS<br>
-    ◦ VPC<br>
-    ◦ EC2(異なるAZへそれぞれ1台ずつ起動した冗長化構成)<br>
-    ◦ RDS(プライベートサブネット上に構築)<br>
- 	◦ Route53(ドメインの取得、https化に使用)<br>
- 	◦ CloudWatch(EC2がダウンした際に、管理者にメールを通知するように設定)<br>
- 	◦ ALB(https化に使用)<br>
- 	◦ Capistrano<br>
- 	◦ device<br>
- 	◦ Ajax<br>
- 	◦ refile<br>
- 	◦ Bootstrap<br>
- 	◦ pry-byebug<br>
- 	◦ BEM記法<br>
- 	◦ Scss<br>
+	◦ VPC<br>
+	◦ EC2(異なるAZへそれぞれ1台ずつ起動した冗長化構成)<br>
+	◦ RDS(プライベートサブネット上に構築)<br>
+	◦ Route53(ドメインの取得、https化に使用)<br>
+	◦ CloudWatch(EC2がダウンした際に、管理者にメールを通知するように設定)<br>
+	◦ ALB(https化に使用)<br>
+	◦ Capistrano<br>
+	◦ device<br>
+	◦ Ajax<br>
+	◦ refile<br>
+	◦ Bootstrap<br>
+	◦ pry-byebug<br>
+	◦ BEM記法<br>
+	◦ Scss<br>
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1Pcd3tI1jsGVAhvcoJgo87O1GDY7d3mHx4aTzn3zVCeM/edit#gid=0
