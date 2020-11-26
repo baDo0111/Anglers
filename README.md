@@ -43,10 +43,10 @@
 　 ◦ device<br>
 　 ◦ Ajax<br>
 　 ◦ refile<br>
- 　◦ Bootstrap<br>
+　 ◦ Bootstrap<br>
 　 ◦ pry-byebug<br>
 　 ◦ BEM記法<br>
- 　◦ Scss<br>
+　 ◦ Scss<br>
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1Pcd3tI1jsGVAhvcoJgo87O1GDY7d3mHx4aTzn3zVCeM/edit#gid=0
