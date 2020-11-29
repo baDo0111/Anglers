@@ -34,10 +34,10 @@
 ・Puma<br>
 ・AWS<br>
 　 ◦ VPC<br>
-　 ◦ EC2(異なるAZへそれぞれ1台ずつ起動した冗長化構成)<br>
+　 ◦ EC2<br>
 　 ◦ RDS(プライベートサブネット上に構築)<br>
 　 ◦ Route53(ドメインの取得、https化に使用)<br>
-　 ◦ CloudWatch(EC2がダウンした際に、管理者にメールを通知するように設定)<br>
+　 ◦ CloudWatch(CPU使用率が80％を超えた時に、管理者にメールを通知するように設定)<br>
 　 ◦ ALB(https化に使用)<br>
 　 ◦ Capistrano<br>
 　 ◦ device<br>
