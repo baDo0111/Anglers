@@ -8,7 +8,7 @@
 
 <div id="ACmenu">
 	<div class="row">
-		<%= form_with model:@fish, url: {controller: 'fishs', action: 'create' } do |f| %>
+		<%= form_with model:@fish, url: {controller: 'fishs', action: 'create', local: true } do |f| %>
 			<div class="form">
 				<div class="col-lg-4 col-xs-12 text-center">
 
@@ -73,7 +73,7 @@
 		<div class="cards__item">
 			<div class="fishpin">
 				<div class="fishpin-img">
-					<%= image_tag 'pina4', size: "70x70" %>
+					<%= image_tag 'pina4.png', size: "70x70" %>
 				</div>
 			</div>
 
